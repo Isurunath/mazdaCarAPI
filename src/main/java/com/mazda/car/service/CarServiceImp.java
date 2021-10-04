@@ -20,6 +20,16 @@ public class CarServiceImp implements CarService{
     }
 
     @Override
+    public Optional<Car> getCarById(int Id) {
+        return carRepository.findById(Id);
+    }
+
+    @Override
+    public Optional<Car> getCarByPlate(String plateNo) {
+        return carRepository.findByplateNo(plateNo);
+    }
+
+    @Override
     public Car saveCar(Car car) {
         return carRepository.save(car);
     }
